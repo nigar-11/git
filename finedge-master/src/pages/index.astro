@@ -1,0 +1,240 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+
+<astro>
+  <Layout>
+    <header class="animated fadeInDown">
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="home-section animated fadeIn">
+        <div class="container">
+          <h1>Welcome to <span class="brand-name">FinEdge</span></h1>
+          <p>Transforming cross-border payments for individuals and businesses</p>
+        </div>
+      </section>
+
+      <section id="about" class="about-section animated fadeIn">
+        <div class="container">
+          <h2>About Us</h2>
+          <p>FinEdge is a cutting-edge fintech startup focused on transforming cross-border payments. We believe in a world where geographic boundaries should not limit individuals and businesses from making seamless transactions.</p>
+        </div>
+      </section>
+
+      <section id="services" class="services-section animated fadeIn">
+        <div class="container">
+          <h2>Our Services</h2>
+          <div class="card-container">
+            <Card
+              title="Individual Money Transfers"
+              description="Send and receive money internationally with ease."
+              icon="money-transfer.png"
+            />
+            <Card
+              title="Business Payments"
+              description="Efficiently manage cross-border transactions for your business."
+              icon="business-payments.png"
+            />
+            <Card
+              title="Real-Time Payment Tracking"
+              description="Track your payments in real-time for complete transparency."
+              icon="payment-tracking.png"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section animated fadeIn">
+        <div class="container">
+          <h2>Contact Us</h2>
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </Layout>
+
+  <style>
+    /* Add your custom styles here */
+
+	@keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* Add animation classes to elements */
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+
+  .fadeInDown {
+    animation-name: fadeInDown;
+  }
+
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+
+    /* Navbar */
+    .navbar {
+      background-color: #333;
+      color: #fff;
+      padding: 1px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .nav-links li {
+      margin-right: 20px;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Sections */
+    .home-section {
+      text-align: center;
+      padding: 100px 20px;
+      background-color: #1c2237;
+      color: #fff;
+    }
+
+    .brand-name {
+      color: #ff9800;
+    }
+
+    .about-section {
+      padding: 80px 20px;
+      background-color: #f8f8f8;
+      color: #333333;
+    }
+
+    .services-section {
+      padding: 80px 20px;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .contact-section {
+      padding: 80px 20px;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #999;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff9800;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff6f00;
+    }
+  </style>
+</astro>
+
